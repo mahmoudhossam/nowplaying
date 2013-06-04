@@ -18,6 +18,7 @@ const (
 	ConsumerSecret    = "REDACTED"
 	AccessToken       = "REDACTED"
 	AccessTokenSecret = "REDACTED"
+	LastFMAPIKey      = "REDACTED"
 )
 
 type Response struct {
@@ -49,7 +50,7 @@ func ConstructURL() string {
 	args := url.Query()
 	args.Add("method", "user.getrecenttracks")
 	args.Add("user", "mhh91")
-	args.Add("api_key", "REDACTED")
+	args.Add("api_key", LastFMAPIKey)
 	args.Add("limit", "1")
 	url.RawQuery = args.Encode()
 	return url.String()
